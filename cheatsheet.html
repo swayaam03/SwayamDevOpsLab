@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Git & GitHub Cheat Sheet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #3264af;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #24292e;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgb(228, 92, 92);
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .command {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9fafb;
+      padding: 0.6rem 1rem;
+      margin: 0.5rem 0;
+      border-left: 5px solid #10b981;
+      font-family: monospace;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+
+    .btn {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .btn:hover {
+      background-color: #059669;
+    }
+
+    .glossary-term {
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .command {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>Git & GitHub Cheat Sheet</header>
+
+<div class="container">
+  <div class="grid-layout">
+
+    <!-- Install & Configure -->
+    <div class="card">
+      <h2>🛠 Install & Configure</h2>
+      <div class="command"><span>git config --global user.name "Your Name"</span><button class="btn" onclick="copy('git config --global user.name &quot;Your Name&quot;')">Copy</button></div>
+      <div class="command"><span>git config --global user.email "you@example.com"</span><button class="btn" onclick="copy('git config --global user.email &quot;you@example.com&quot;')">Copy</button></div>
+      <div class="command"><span>git config --global color.ui auto</span><button class="btn" onclick="copy('git config --global color.ui auto')">Copy</button></div>
+    </div>
+
+    <!-- Repository -->
+    <div class="card">
+      <h2>📁 Repository</h2>
+      <div class="command"><span>git init</span><button class="btn" onclick="copy('git init')">Copy</button></div>
+      <div class="command"><span>git clone [url]</span><button class="btn" onclick="copy('git clone [url]')">Copy</button></div>
+    </div>
+
+    <!-- Branching -->
+    <div class="card">
+      <h2>🌿 Branching</h2>
+      <div class="command"><span>git branch</span><button class="btn" onclick="copy('git branch')">Copy</button></div>
+      <div class="command"><span>git checkout -b feature</span><button class="btn" onclick="copy('git checkout -b feature')">Copy</button></div>
+      <div class="command"><span>git merge [branch]</span><button class="btn" onclick="copy('git merge [branch]')">Copy</button></div>
+      <div class="command"><span>git branch -d [branch]</span><button class="btn" onclick="copy('git branch -d [branch]')">Copy</button></div>
+    </div>
+
+    <!-- Workflow -->
+    <div class="card">
+      <h2>📌 Workflow</h2>
+      <div class="command"><span>git status</span><button class="btn" onclick="copy('git status')">Copy</button></div>
+      <div class="command"><span>git add .</span><button class="btn" onclick="copy('git add .')">Copy</button></div>
+      <div class="command"><span>git commit -m "msg"</span><button class="btn" onclick="copy('git commit -m &quot;msg&quot;')">Copy</button></div>
+    </div>
+
+    <!-- Remote -->
+    <div class="card">
+      <h2>🌐 Remote</h2>
+      <div class="command"><span>git remote add origin [url]</span><button class="btn" onclick="copy('git remote add origin [url]')">Copy</button></div>
+      <div class="command"><span>git push -u origin main</span><button class="btn" onclick="copy('git push -u origin main')">Copy</button></div>
+      <div class="command"><span>git pull</span><button class="btn" onclick="copy('git pull')">Copy</button></div>
+      <div class="command"><span>git fetch</span><button class="btn" onclick="copy('git fetch')">Copy</button></div>
+    </div>
+
+    <!-- Logs -->
+    <div class="card">
+      <h2>📜 Logs & History</h2>
+      <div class="command"><span>git log</span><button class="btn" onclick="copy('git log')">Copy</button></div>
+      <div class="command"><span>git log --follow [file]</span><button class="btn" onclick="copy('git log --follow [file]')">Copy</button></div>
+      <div class="command"><span>git show [commit]</span><button class="btn" onclick="copy('git show [commit]')">Copy</button></div>
+    </div>
+
+    <!-- Undo / Reset -->
+    <div class="card">
+      <h2>♻️ Undo / Reset</h2>
+      <div class="command"><span>git reset [commit]</span><button class="btn" onclick="copy('git reset [commit]')">Copy</button></div>
+      <div class="command"><span>git reset --hard [commit]</span><button class="btn" onclick="copy('git reset --hard [commit]')">Copy</button></div>
+    </div>
+
+    <!-- Stashing -->
+    <div class="card">
+      <h2>🧺 Stashing</h2>
+      <div class="command"><span>git stash</span><button class="btn" onclick="copy('git stash')">Copy</button></div>
+      <div class="command"><span>git stash pop</span><button class="btn" onclick="copy('git stash pop')">Copy</button></div>
+      <div class="command"><span>git stash list</span><button class="btn" onclick="copy('git stash list')">Copy</button></div>
+    </div>
+
+    <!-- Tagging -->
+    <div class="card">
+      <h2>🔖 Tagging</h2>
+      <div class="command"><span>git tag v1.0</span><button class="btn" onclick="copy('git tag v1.0')">Copy</button></div>
+      <div class="command"><span>git tag</span><button class="btn" onclick="copy('git tag')">Copy</button></div>
+      <div class="command"><span>git push origin v1.0</span><button class="btn" onclick="copy('git push origin v1.0')">Copy</button></div>
+    </div>
+
+    <!-- Rebasing -->
+    <div class="card">
+      <h2>🧬 Rebase</h2>
+      <div class="command"><span>git rebase main</span><button class="btn" onclick="copy('git rebase main')">Copy</button></div>
+      <div class="command"><span>git rebase -i HEAD~3</span><button class="btn" onclick="copy('git rebase -i HEAD~3')">Copy</button></div>
+      <div class="command"><span>git rebase --abort</span><button class="btn" onclick="copy('git rebase --abort')">Copy</button></div>
+    </div>
+
+    <!-- Cherry-pick -->
+    <div class="card">
+      <h2>🍒 Cherry-pick</h2>
+      <div class="command"><span>git cherry-pick &lt;commit&gt;</span><button class="btn" onclick="copy('git cherry-pick &lt;commit&gt;')">Copy</button></div>
+    </div>
+
+    <!-- GitHub CLI -->
+    <div class="card">
+      <h2>🧑‍💻 GitHub CLI</h2>
+      <div class="command"><span>gh auth login</span><button class="btn" onclick="copy('gh auth login')">Copy</button></div>
+      <div class="command"><span>gh repo create</span><button class="btn" onclick="copy('gh repo create')">Copy</button></div>
+      <div class="command"><span>gh pr create</span><button class="btn" onclick="copy('gh pr create')">Copy</button></div>
+    </div>
+
+    <!-- GitHub Flow -->
+    <div class="card">
+      <h2>🧭 GitHub Flow</h2>
+      <p><strong>Step 1:</strong> Create branch → <code>git checkout -b feature</code></p>
+      <p><strong>Step 2:</strong> Commit → <code>git commit -m "Add feature"</code></p>
+      <p><strong>Step 3:</strong> Push → <code>git push origin feature</code></p>
+      <p><strong>Step 4:</strong> PR → <code>gh pr create</code></p>
+      <p><strong>Step 5:</strong> Merge → <code>gh pr merge</code></p>
+      <p><strong>Step 6:</strong> Sync → <code>git pull origin main</code></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function copy(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied: " + text);
+    });
+  }
+</script>
+
+</body>
+</html>
